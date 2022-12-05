@@ -1,0 +1,88 @@
+
+body {
+    width: 1858px;
+    height : 814px;
+}
+.mystyle {
+    font-size: 10pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid rgb(22, 11, 11);
+}
+body {
+    width: 1858px;
+    height : 814px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 836px 613px 1fr;
+    margin-top: 0px;
+    height: 100%;
+}
+.callender {
+    display: grid;
+    grid-template-rows: 90px 500px 1fr;
+    background-color: blanchedalmond;
+}
+.information {
+    display: grid;
+    grid-template-rows: 300px 250px 1fr;
+    background-color: aqua;
+}
+.documents {
+    display: grid;
+    grid-template-rows: 200px 450px 1fr;
+    background-color: blueviolet;
+}
+.cal_top {
+    background-color: aquamarine;
+}
+.cal_main {
+    background-color: brown;
+}
+.cal_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.cal_pm {
+    background-color: darkolivegreen;
+}
+.cal_tm {
+    background-color: darkseagreen;
+}
+.cal_nm {
+    background-color: rgb(27, 240, 115);
+}
+.task_check {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.task_info {
+    background-color: chartreuse;
+}
+.task_history {
+    background-color: darkorange;
+}
+.task_buttons {
+    background-color: aliceblue;
+}
+.task_for_days {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.task_daily {
+    background-color: rgb(73, 172, 172);
+}
+.task_simple {
+    background-color: dodgerblue;
+}
+.docs_official {
+    background-color: darkseagreen;
+}
+.docs_material {
+    background-color: greenyellow;
+}
+.docs_new {
+    background-color: rgb(78, 167, 167);
+}
