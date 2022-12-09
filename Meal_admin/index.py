@@ -10,12 +10,21 @@ import cgi
 form=cgi.FieldStorage()
 this_month = get_data.get_thismonth()
 df_emp = get_data.callup_employees_db()
-team_list = df_emp['Team'].unique()
+team_list = df_emp['Team_code'].unique()
 def get_team():
     teams = ''
     for item in team_list:
-        teams = teams + '<li><a href="index.py?id={name}">{name}</a></li>'.format(name=item)
+        teams = teams + '<li><a href="index.py?team={name}">{name}</a></li>'.format(name=item)
     return teams
+
+
+#소속팀에 맞는 리스트 가져오기
+def get_members(team):
+    if 'team' in form:
+        df_emp = pd.read_excel('data/employees_db.xlsx')
+        team = form['team'].value
+        df_emp = df_emp.loc[df_emp['Team_code']==team,['Name']]
+
 
 if 'team' in form:
     teams = form['team'].value
@@ -36,9 +45,7 @@ html_str = f'''
         {this_month}
     </p>
     <ul>
-        <li><a href="index.py?team=admin">복지행정팀</a></li>
-        <li><a href="index.py?team=support">복지지원팀</a></li>
-        <li><a href="index.py?team=service">복지서비스팀</a></li>
+        {get_team()}
     </ul>
     <p>
         {teams}
